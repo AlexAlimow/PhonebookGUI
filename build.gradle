@@ -37,6 +37,7 @@ task qa(type: Test) {
         systemProperty 'browser', "${browser}"
     }
 }
+
 def registerTask(String taskName, String suitePath) {
     tasks.register(taskName,Test) {
         testClassesDirs = sourceSets.test.output.classesDirs

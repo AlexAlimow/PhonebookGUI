@@ -1,6 +1,7 @@
 package Phonebook.tests;
 
 import Phonebook.core.TestBase;
+import Phonebook.utils.MyRetryAnalyzer;
 import com.phonebook.models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -30,7 +31,7 @@ public class CreateAccountTests extends TestBase {
     }
 
 
-    @Test
+    @Test(retryAnalyzer = MyRetryAnalyzer.class)
     public void existedUserRegisterNegativeTest() {
         app.getUser().clickOnLoginLink();
         app.getUser().fillLoginRegisterForm(new User()
